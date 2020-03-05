@@ -11,9 +11,13 @@ def load_library(file)
   return hash
 end
 
-def get_japanese_emoticon
-  # code goes here
-  
+def get_japanese_emoticon(file, e_emoticon)
+  emojifile = load_library(file)
+    if emojifile["get_emoticon"].include? (e_emoticon)
+      return emojifile["get_emoticon"][e_emoticon]
+    else 
+      return "Sorry, that emoticon was not found"
+    end
 end
 
 def get_english_meaning
